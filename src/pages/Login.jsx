@@ -1,6 +1,8 @@
-
+import { signInWithPopup } from "firebase/auth";
+import { auth, provider } from "../firebase/firebase";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function RoomMatchLogin() {
 
@@ -12,7 +14,11 @@ export default function RoomMatchLogin() {
   const handleGoogleLogin = async () => {
     try {
 
-      const result = await signInWithPopup(auth, provider);
+      provider.setCustomParameters({
+  prompt: "select_account",
+});
+
+const result = await signInWithPopup(auth, provider);
 
       console.log(result.user);
 
@@ -134,9 +140,6 @@ export default function RoomMatchLogin() {
               </p>
             </div>
 
-            import {signInWithPopup} from "firebase/auth";
-
-            import {auth, provider} from "../firebase/firebase";
             {/* Botón Google */}
             <button
               onClick={handleGoogleLogin}
@@ -222,16 +225,19 @@ export default function RoomMatchLogin() {
             {/* Footer */}
             <p className="text-center text-lg mt-8 text-gray-600">
               ¿No tienes cuenta?{' '}
-              <button
-                type="button"
+              <Link
+                to="/register"
                 className="text-[#0B3D91] font-semibold hover:underline"
               >
                 Crear cuenta
-              </button>
+              </Link>
+              
+            
             </p>
+
           </div>
         </div>
       </div>
-    </div>
+   </div >
   )
 }

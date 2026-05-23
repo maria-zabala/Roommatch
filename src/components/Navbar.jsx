@@ -8,6 +8,8 @@ import {
   FiUsers,
 } from "react-icons/fi";
 
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
   return (
     <div className="bg-white border-b">
@@ -31,25 +33,37 @@ export default function Navbar() {
         {/* MENU */}
         <div className="flex items-center gap-10 text-[18px] text-gray-700">
 
-          <button className="flex items-center gap-2 bg-orange-50 text-orange-500 px-5 py-3 rounded-2xl">
+          <Link
+            to="/home"
+            className="flex items-center gap-2 bg-orange-50 text-orange-500 px-5 py-3 rounded-2xl"
+          >
             <FiHome />
             Inicio
-          </button>
+          </Link>
 
-          <button className="flex items-center gap-2 hover:text-orange-500 transition">
+          <Link
+            to="/favoritos"
+            className="flex items-center gap-2 hover:text-orange-500 transition"
+          >
             <FiHeart />
             Favoritos
-          </button>
+          </Link>
 
-          <button className="flex items-center gap-2 hover:text-orange-500 transition">
+          <Link
+            to="/mensajes"
+            className="flex items-center gap-2 hover:text-orange-500 transition"
+          >
             <FiMessageSquare />
             Mensajes
-          </button>
+          </Link>
 
-          <button className="flex items-center gap-2 hover:text-orange-500 transition">
+          <Link
+            to="/perfil"
+            className="flex items-center gap-2 hover:text-orange-500 transition"
+          >
             <FiUser />
             Perfil
-          </button>
+          </Link>
 
         </div>
 
