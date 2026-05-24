@@ -7,6 +7,7 @@ import Favoritos from "./pages/Favoritos";
 import Mensajes from "./pages/Mensajes";
 import Perfil from "./pages/Perfil";
 
+
 function App() {
   return (
     <Routes>
@@ -16,6 +17,7 @@ function App() {
       <Route path="/favoritos" element={<Favoritos />} />
       <Route path="/mensajes" element={<Mensajes />} />
       <Route path="/perfil" element={<Perfil />} />
+      
     </Routes>
   );
 }

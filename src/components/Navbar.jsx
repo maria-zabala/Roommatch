@@ -8,9 +8,14 @@ import {
   FiUsers,
 } from "react-icons/fi";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
+
+  const location = useLocation();
+
+  const isHome = location.pathname === "/home";
+
   return (
     <div className="bg-white border-b">
 
@@ -74,42 +79,49 @@ export default function Navbar() {
 
       </div>
 
-      {/* FILTRO */}
-      <div className="px-14 py-4 flex items-center gap-4">
+      {/* SOLO EN HOME */}
+      {isHome && (
+        <>
 
-        <button className="flex items-center gap-2 bg-orange-500 text-white px-7 py-3 rounded-full text-lg shadow-sm">
+          {/* FILTRO */}
+          <div className="px-14 py-4 flex items-center gap-4">
 
+            <button className="flex items-center gap-2 bg-orange-500 text-white px-7 py-3 rounded-full text-lg shadow-sm">
 
-          <FiUsers className="text-lg" />
-          Roomie
-        </button>
+              <FiUsers className="text-lg" />
+              Roomie
 
-      </div>
+            </button>
 
-      {/* BUSCADOR */}
-      <div className="px-14 pb-5 flex gap-4">
+          </div>
 
-        <div className="flex items-center flex-1 border rounded-2xl px-5 py-4 bg-white shadow-sm">
+          {/* BUSCADOR */}
+          <div className="px-14 pb-5 flex gap-4">
 
-          <FiSearch className="text-gray-400 text-xl mr-3" />
+            <div className="flex items-center flex-1 border rounded-2xl px-5 py-4 bg-white shadow-sm">
 
-          <input
-            type="text"
-            placeholder="Buscar por nombre o descripción..."
-            className="w-full outline-none text-lg"
-          />
+              <FiSearch className="text-gray-400 text-xl mr-3" />
 
-        </div>
+              <input
+                type="text"
+                placeholder="Buscar por nombre o descripción..."
+                className="w-full outline-none text-lg"
+              />
 
-        <button className="flex items-center gap-2 border rounded-2xl px-6 text-lg bg-white shadow-sm text-gray-600">
+            </div>
 
-          <FiMapPin className="text-orange-500" />
+            <button className="flex items-center gap-2 border rounded-2xl px-6 text-lg bg-white shadow-sm text-gray-600">
 
-          Todas las zonas
+              <FiMapPin className="text-orange-500" />
 
-        </button>
+              Todas las zonas
 
-      </div>
+            </button>
+
+          </div>
+
+        </>
+      )}
 
     </div>
   );
