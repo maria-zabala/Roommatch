@@ -1,14 +1,22 @@
 import Navbar from "../components/Navbar";
 import ChatBox from "../components/ChatBox";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  
+  
   return (
     <div className="bg-[#f5f5f5] min-h-screen">
 
       <Navbar />
+      <div className="p-10">
+      
+    
 
-      <div class="bg-white py-24 sm:py-32">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    </div>
+
+      <div className="mx-auto max-w-5xl px-6">
+      <div class="mx-auto max-w-6xl px-6 lg:px-8">
           <div class="mx-auto max-w-2xl lg:mx-0">
             <h1 className="text-2xl font-bold text-orange-500">Buscar Roomie</h1>
             <p class="mt-2 text-lg/8 text-gray-600">Busca en esta sección alguien que comparta su apartamento contigo.</p>
@@ -44,7 +52,7 @@ export default function Home() {
                   <p class="text-gray-600">Estudiante</p>
                 </div>
               </div>
-              <br />              
+              <br />
               <button className="bg-orange-500 text-white px-8 py-3 rounded-2xl text-lg font-semibold shadow-sm hover:bg-orange-600 transition justify-center w-full">
                 Más información
               </button>
@@ -79,7 +87,7 @@ export default function Home() {
                   <p class="text-gray-600">Estudiante, profesional</p>
                 </div>
               </div>
-              <br />              
+              <br />
               <button className="bg-orange-500 text-white px-8 py-3 rounded-2xl text-lg font-semibold shadow-sm hover:bg-orange-600 transition justify-center w-full">
                 Más información
               </button>
@@ -114,7 +122,7 @@ export default function Home() {
                   <p class="text-gray-600">Profesional</p>
                 </div>
               </div>
-              <br />              
+              <br />
               <button className="bg-orange-500 text-white px-8 py-3 rounded-2xl text-lg font-semibold shadow-sm hover:bg-orange-600 transition justify-center w-full">
                 Más información
               </button>

@@ -9,18 +9,35 @@ import {
 } from "react-icons/fi";
 
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 export default function Navbar() {
 
   const location = useLocation();
 
   const isHome = location.pathname === "/home";
+  const [mostrarZonas, setMostrarZonas] = useState(false);
+
+  const zonas = [
+    "El Poblado",
+    "Laureles",
+    "Envigado",
+    "Belén",
+    "Sabaneta",
+    "La América",
+    "Robledo",
+    "Castilla",
+    "Aranjuez",
+    "Buenos Aires",
+    "Manrique",
+    "Centro"
+  ];
 
   return (
     <div className="bg-white border-b">
 
-      {/* NAVBAR SUPERIOR */}
-      <div className="flex items-center justify-between px-14 py-4">
+      
+     <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-5">
 
         {/* LOGO */}
         <div className="flex items-center gap-3">
@@ -29,14 +46,14 @@ export default function Navbar() {
             <FiHome className="text-white text-xl" />
           </div>
 
-          <h1 className="text-2xl font-bold text-orange-500">
+          <h1 className=" text-xl font-bold text-orange-500">
             ROOMMATCH
           </h1>
 
         </div>
 
         {/* MENU */}
-        <div className="flex items-center gap-10 text-[18px] text-gray-700">
+        <div className="flex items-center gap-8 text-[17px] text-gray-700">
 
           <Link
             to="/home"
@@ -73,17 +90,17 @@ export default function Navbar() {
         </div>
 
         {/* BOTON */}
-        <button className="bg-orange-500 text-white px-8 py-3 rounded-2xl text-lg font-semibold shadow-sm hover:bg-orange-600 transition">
+        <button className="bg-orange-500 text-white px-7 py-2.5 rounded-2xl text-lg font-semibold shadow-sm hover:bg-orange-600 transition">
           + Publicar
         </button>
 
       </div>
 
-      {/* SOLO EN HOME */}
+      
       {isHome && (
         <>
 
-          {/* FILTRO */}
+         
           <div className="px-14 py-4 flex items-center gap-4">
 
             <button className="flex items-center gap-2 bg-orange-500 text-white px-7 py-3 rounded-full text-lg shadow-sm">
@@ -95,7 +112,7 @@ export default function Navbar() {
 
           </div>
 
-          {/* BUSCADOR */}
+          
           <div className="px-14 pb-5 flex gap-4">
 
             <div className="flex items-center flex-1 border rounded-2xl px-5 py-4 bg-white shadow-sm">
@@ -110,13 +127,39 @@ export default function Navbar() {
 
             </div>
 
-            <button className="flex items-center gap-2 border rounded-2xl px-6 text-lg bg-white shadow-sm text-gray-600">
+            <div className="relative">
 
-              <FiMapPin className="text-orange-500" />
+              <button
+                onClick={() => setMostrarZonas(!mostrarZonas)}
+                className="flex items-center gap-2 border rounded-2xl px-6 py-4 text-lg bg-white shadow-sm text-gray-600"
+              >
 
-              Todas las zonas
+                <FiMapPin className="text-orange-500" />
 
-            </button>
+                Todas las zonas
+
+              </button>
+
+              {mostrarZonas && (
+
+                <div className="absolute top-16 right-0 w-64 bg-white border rounded-2xl shadow-lg z-50 overflow-hidden">
+
+                  {zonas.map((zona, index) => (
+
+                    <div
+                      key={index}
+                      className="px-5 py-3 hover:bg-gray-100 cursor-pointer"
+                    >
+                      {zona}
+                    </div>
+
+                  ))}
+
+                </div>
+
+              )}
+
+            </div>
 
           </div>
 

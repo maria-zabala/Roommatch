@@ -14,19 +14,19 @@ export default function Profile() {
   return (
     <div className="bg-[#F5F5F5] min-h-screen">
 
-      {/* NAVBAR */}
+     
       <Navbar />
 
-      {/* FONDO NARANJA */}
+      
       <div className="bg-orange-500 h-[180px] w-full"></div>
 
-      {/* CONTENIDO */}
+      
       <div className="max-w-6xl mx-auto px-8 -mt-24">
 
-        {/* TITULO */}
+        
         <div className="flex justify-between items-center mb-8">
 
-          <h1 className="text-4xl font-bold text-white">
+          <h1 className="text-3xl font-bold text-white">
             Mi Perfil
           </h1>
 
@@ -36,7 +36,7 @@ export default function Profile() {
           >
 
             <FiLogOut className="text-xl" />
-
+ 
             Salir
 
           </button>
@@ -93,7 +93,7 @@ export default function Profile() {
             Mis Publicaciones
           </h2>
 
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-2xl text-xl font-semibold flex items-center gap-3 transition">
+          <button className="bg-orange-400 hover:bg-orange-600 text-white px-8 py-4 rounded-2xl text-xl font-semibold flex items-center gap-3 transition">
             <FiPlus />
             Nueva Publicación
           </button>
@@ -109,11 +109,11 @@ export default function Profile() {
 
           </div>
 
-          <p className="text-gray-500 text-3xl mt-8">
+          <p className="text-gray-400 text-3xl mt-8">
             Aún no tienes publicaciones
           </p>
 
-          <button className="mt-8 bg-orange-500 hover:bg-orange-600 text-white px-10 py-5 rounded-2xl text-2xl font-semibold transition">
+          <button className="mt-8 bg-orange-500 hover:bg-orange-500 text-white px-10 py-5 rounded-2xl text-2xl font-semibold transition">
             Crear mi primera publicación
           </button>
 

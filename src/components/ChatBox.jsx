@@ -38,9 +38,31 @@ export default function ChatBox() {
     else if (
       text.includes("medellin") ||
       text.includes("medellín")
+
     ) {
       botResponse =
         "Tenemos roomies disponibles en Medellín 🏡";
+    }
+    else if (
+      text.includes("laureles")
+    ) {
+      botResponse =
+        "Laureles es una de las zonas más buscadas por estudiantes y jóvenes profesionales 🏡";
+    }
+
+    else if (
+      text.includes("belen") ||
+      text.includes("belén")
+    ) {
+      botResponse =
+        "Belén tiene opciones económicas y excelente transporte 🚍";
+    }
+
+    else if (
+      text.includes("robledo")
+    ) {
+      botResponse =
+        "Robledo es ideal para estudiantes por su cercanía a universidades 🎓";
     }
 
     else if (
@@ -150,11 +172,10 @@ export default function ChatBox() {
 
                 <div
                   key={index}
-                  className={`p-3 rounded-2xl max-w-[85%] break-words ${
-                    msg.type === "user"
+                  className={`p-3 rounded-2xl max-w-[85%] break-words ${msg.type === "user"
                       ? "bg-orange-500 text-white ml-auto"
                       : "bg-orange-50 border border-orange-100 text-gray-700"
-                  }`}
+                    }`}
                 >
                   {msg.text}
                 </div>
